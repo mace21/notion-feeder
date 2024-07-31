@@ -2,7 +2,7 @@ name: Get Feed
 
 on:
   schedule:
-    - cron: '00 05 * * *' # UTC로 기입 필요. 한국시각 14:00 
+    - cron: '00 05 * * *' # UTC로 기입 필요(예 '00 05). UTC 5:00 는 한국시각 14:00 
   workflow_dispatch:
 
 jobs:
