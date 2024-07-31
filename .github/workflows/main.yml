@@ -2,7 +2,7 @@ name: Get Feed
 
 on:
   schedule:
-    - cron: '15 05 * * *' # UTC로 기입 필요 예: 00 05 분 시각 UTC 5:00 는 한국시각 14:00 
+    - cron: '15 5 * * *' # UTC로 기입 필요 00 05 분 시각 순 UTC 05 00 는 한국시각 14 00 
   workflow_dispatch:
 
 jobs:
@@ -12,7 +12,7 @@ jobs:
       NOTION_API_TOKEN: ${{ secrets.NOTION_API_TOKEN }}
       NOTION_READER_DATABASE_ID: ${{ secrets.NOTION_READER_DATABASE_ID }}
       NOTION_FEEDS_DATABASE_ID: ${{ secrets.NOTION_FEEDS_DATABASE_ID }}
-      RUN_FREQUENCY: 600 # in seconds  24시간은 86400 임 28800초 
+      RUN_FREQUENCY: 600 # in seconds
     steps:
       - name: Setup Node
         uses: actions/setup-node@v2
