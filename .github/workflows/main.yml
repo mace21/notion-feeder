@@ -2,17 +2,17 @@ name: Get Feed
 
 on:
   schedule:
-    - cron: '00 7 * * *' # UTC time mm hh
+    - cron: '00 5 * * *' # UTC time mm hh
   workflow_dispatch:
 
 jobs:
   get-feed:
     runs-on: ubuntu-latest
     env:
-      NOTION_API_TOKEN: 'secret_LnaFfXq4xShp8FbP4q2bqFPmomkmLbGj4kcavnL2MsW'
-      NOTION_READER_DATABASE_ID: '8773bd32d807470aad3fd02d5b6b37f6'
-      NOTION_FEEDS_DATABASE_ID: '2b87503bf42243a4a0c717279d38de3e'
-      RUN_FREQUENCY: 6000 # in seconds
+      NOTION_API_TOKEN: ${{ secrets.NOTION_API_TOKEN }}
+      NOTION_READER_DATABASE_ID: ${{ secrets.NOTION_READER_DATABASE_ID }}
+      NOTION_FEEDS_DATABASE_ID: ${{ secrets.NOTION_FEEDS_DATABASE_ID }}
+      RUN_FREQUENCY: 3000 # in seconds
     steps:
       - name: Setup Node
         uses: actions/setup-node@v2
